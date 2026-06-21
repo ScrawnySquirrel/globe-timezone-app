@@ -1,0 +1,33 @@
+{
+  "name": "globe-timezone-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:timezone-data": "tsx scripts/build-timezone-data.ts",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest --run"
+  },
+  "dependencies": {
+    "globe.gl": "^2.32.1",
+    "three": "^0.184.0",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/geojson": "7946.0.14",
+    "@types/node": "20.11.30",
+    "@types/three": "^0.184.1",
+    "@types/topojson-client": "^3.1.3",
+    "@types/topojson-specification": "^1.0.5",
+    "fast-check": "3.17.2",
+    "tsx": "4.7.1",
+    "typescript": "5.4.3",
+    "vite": "5.2.6",
+    "vitest": "1.4.0"
+  }
+}
