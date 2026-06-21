@@ -25,7 +25,10 @@ export class GlobeRenderer {
   onPointerClick: PointerCallback | null = null;
 
   constructor(container: HTMLElement) {
-    this.globe = Globe()(container)
+    // globe.gl exports a constructor in its type defs but works as Globe()(el) at runtime
+    // Use 'as any' to bypass the type mismatch between constructor signature and actual API
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    this.globe = (Globe as any)()(container)
       .globeImageUrl("//unpkg.com/three-globe/example/img/earth-dark.jpg")
       .backgroundImageUrl("//unpkg.com/three-globe/example/img/night-sky.png")
       .width(container.clientWidth)
