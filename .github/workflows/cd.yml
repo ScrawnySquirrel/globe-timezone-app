@@ -20,8 +20,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20.12.2"
-          cache: "npm"
-      - run: npm ci
+      - run: npm install
       - run: npx tsc --noEmit
       - run: npm run test:run
       - uses: aws-actions/configure-aws-credentials@v4
